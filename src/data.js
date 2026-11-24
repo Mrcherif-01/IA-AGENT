@@ -1,0 +1,13 @@
+export const CITIES=[
+ {c:'Istanbul',k:'Türkiye',p:2249,a:['#3a4f9a','#f0a070'],s:'<path d="M60 130V90q0-30 40-30t40 30v40zM30 130V70h6v60zM170 130V50h6v80z" fill="#2c2850"/>'},
+ {c:'Dubai',k:'UAE',p:3490,a:['#12307a','#3a7ad0'],s:'<path d="M95 130V20l5-14 5 14v110zM40 130V90h18v40zM140 130V80h20v50z" fill="#0b1a3f"/>'},
+ {c:'Paris',k:'France',p:4299,a:['#4a8ee0','#f1c9a0'],s:'<path d="M100 20 120 130h-12l-8-40-8 40H80z" fill="#3c3a42"/><path d="M85 85h30v6H85z" fill="#3c3a42"/>'},
+ {c:'Rome',k:'Italy',p:3990,a:['#3a86e8','#e8b87a'],s:'<path d="M30 130V70q70-30 140 0v60z" fill="#b98a58"/><path d="M50 90v40M75 85v45M100 83v47M125 85v45M150 90v40" stroke="#6b4a2c" stroke-width="6"/>'},
+ {c:'Barcelona',k:'Spain',p:2890,a:['#2f6fd0','#f4b46a'],s:'<path d="M70 130V60l10-30 10 30v70zM100 130V50l10-35 10 35v80zM130 130V70l10-25 10 25v60z" fill="#8a5a2a"/>'},
+ {c:'Cairo',k:'Egypt',p:2150,a:['#c9863a','#f6d79a'],s:'<path d="M30 130 100 40l70 90zM110 130l40-50 45 50z" fill="#b07a34"/>'}];
+export const KINDS={Packages:{f:1,t:c=>c+' Getaway',d:'Flight + hotel + tours · 7 nights'},Flights:{f:.45,t:c=>'Flights to '+c,d:'Return economy · 1 stop max'},Hotels:{f:.6,t:c=>'Stay in '+c,d:'4-star hotel · 7 nights with breakfast'}};
+export const ITEMS=CITIES.flatMap(c=>Object.keys(KINDS).map(k=>({id:c.c+'-'+k,city:c.c,country:c.k,kind:k,title:KINDS[k].t(c.c),desc:KINDS[k].d,c,price:k==='Packages'?c.p:Math.round(c.p*KINDS[k].f/10)*10})));
+export const DEAL={id:'deal',city:'Istanbul',country:'Türkiye',kind:'Packages',title:'Istanbul Getaway',desc:'8 days / 7 nights · Flight + Hotel + Tours',c:CITIES[0],price:2221,deal:true};
+export const SKY='<g fill="#3b3560"><rect x="560" y="20" width="9" height="230"/><path d="M564 0l6 24h-12z"/><rect x="640" y="40" width="9" height="210"/><path d="M644 20l6 24h-12z"/><rect x="700" y="70" width="8" height="180"/><path d="M704 50l5 22h-10z"/><path d="M380 250v-70q0-60 90-60t90 60v70z"/><rect x="400" y="110" width="140" height="20" rx="6"/><path d="M0 250v-30h60v-20h50v20h70v-40h40v40h80v-30h60v30h60v30z"/><rect x="590" y="190" width="210" height="60"/></g><g fill="#f0b07a" opacity=".7"><path d="M400 250v-60q0-45 70-45t70 45v60z"/><rect x="590" y="215" width="210" height="35"/></g><g fill="#fff"><rect x="640" y="268" width="90" height="16" rx="3"/><rect x="660" y="256" width="50" height="12" rx="2"/></g>';
+export const SNAP='<rect y="120" width="200" height="50" fill="#c0714a"/><path d="M85 120V70l15-40 15 40v50z" fill="#d9b48a"/><path d="M85 70h30l-15-40z" fill="#8a5a3a"/><path d="M0 130h60v-20h25v30H0zM115 125h85v-25h-30v-10h-20v35z" fill="#e0c9a6"/>';
+
